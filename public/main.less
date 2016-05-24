@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700italic,700,600italic,300italic,600,400italic);
+
+@gray: #ccc;
+@light-gray: #e8e8e8;
+@blue: #3498db;
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	background-color: @light-gray;
+	overflow: hidden;
+}
+.header {
+	z-index: 1000;
+	width: 100%;
+	padding-left: 10px;
+	line-height: 60px;
+	height: 60px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-bottom: 1px solid @gray;
+	.logo {
+		color: @blue;
+		font-size: 18pt;
+		font-weight: 500;
+	}
+	background-color: white;
+	.nav-items {
+		float: right;
+		padding-right: 10px;
+		font-size: 24px;
+		i {
+			color: @blue;
+			cursor: pointer;
+		}
+	}
+	div {
+		display: inline-block;
+	}
+}
+
+.body-container {
+	z-index: 0;
+	width: 1000px;
+	height: 100vh;
+	max-height: 100vh;
+	margin: auto;
+	position: relative;
+
+}
+.sheets{
+	padding-top: 70px;
+	padding-left: 5px;
+	padding-right: 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow-y: scroll;
+	height: 100vh;
+}
+.def-bar {
+	position: absolute;
+	top: 60px;
+	right: 0;
+	width: 395px;
+	padding: 0 10px;
+}
+.sheet {
+	font-family: "Times New Roman", Georgia, Serif;
+	padding: 50px;
+	width:595px; 
+	height:841px;
+	background-color: white;
+	margin-bottom: 20px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	input {
+		display: inline-block;
+		padding: 1px;
+		border: none;
+		border-bottom: 1px solid @gray;
+		&:focus{
+			outline: none;
+		}
+	}
+	textarea {
+		width: 100%;
+		resize:none;
+		&:focus{
+			outline: none;
+		}
+	}
+	span {
+		background-color: yellow;
+		cursor: pointer;
+	}
+}
+
+h2.contract-title {
+	font-size: 24px;
+	text-align: center;
+}
+.w-40 {
+	width: 40px;
+}
+.w-100 {
+	width: 100px;
+}
+.w-250 {
+	width: 250px;
+}
