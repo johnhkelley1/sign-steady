@@ -2,6 +2,7 @@
 
 @gray: #ccc;
 @light-gray: #e8e8e8;
+@dark-gray: #8a8a8a;
 @blue: #3498db;
 
 body {
@@ -30,8 +31,7 @@ body {
 		padding-right: 10px;
 		font-size: 24px;
 		i {
-			color: @blue;
-			cursor: pointer;
+			color: @dark-gray;
 		}
 	}
 	div {
@@ -49,14 +49,47 @@ body {
 
 }
 .sheets{
-	padding-top: 70px;
 	padding-left: 5px;
 	padding-right: 5px;
 	position: absolute;
-	top: 0;
+	top: 130px;
 	left: 0;
 	overflow-y: scroll;
-	height: 100vh;
+	height: calc(~"100vh - 70px");
+}
+.sheets-header {
+	position: absolute;
+	width:595px; 
+	height: 60px;
+	top: 70px;
+	left: 5px;
+	background-color: white;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom: 1px solid @gray;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	.sheets-header-title {
+		line-height: 60px;
+		font-size: 16pt;
+		font-weight: 100;
+		padding-left: 10px;
+	}
+	div,button {
+		display: inline-block;
+	}
+	.contract-options {
+		float: right;
+		padding-right: 10px;
+		padding-top: 13px;
+	}
+	button {
+		margin-left: 5px;
+		&:focus {
+			outline: none;
+			background-color: #337ab7;
+		}
+	}
+
 }
 .def-bar {
 	position: absolute;
