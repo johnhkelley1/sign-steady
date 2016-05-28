@@ -126,11 +126,81 @@ body {
 		background-color: yellow;
 		cursor: pointer;
 	}
+	span.no-highlight {
+		background: none;
+		cursor: auto;
+	}
 }
 
 h2.contract-title {
 	font-size: 24px;
 	text-align: center;
+}
+//options page
+.options-well {
+	margin-top: 70px;
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid @gray;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+	.title {
+		text-align: center;
+		font-size: 24pt;
+		font-weight: 500;
+		margin-bottom: 20px;
+
+	}
+	.option {
+		font-size: 24pt;
+		position: relative;
+	}
+	.lab {
+		position: absolute;
+		width: calc(~"100%-50px");
+		top: 3px;
+		left: 40px;
+		font-weight: 100;
+	}
+	div.btn-wrapper {
+
+		text-align: center;
+
+	}
+}
+.checkbox {
+	width: 30px;
+	height: 30px;
+	border: 5px solid @gray;
+	display: inline-block;
+	cursor: pointer;
+	&.checked {
+		background-color: @blue;
+	}
+	margin-top: 10px;
+}
+.sig-input {
+	padding: 20px;
+	font-size: 24pt;
+	width: 100%;
+	&:focus {
+		outline: none;
+	}
+}
+.accordion-group {
+	width: 100%;
+	border: 1px solid @gray;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	.accordion-heading {
+		font-size: 16pt;
+	}
+}
+input.invalid {
+	border: 1px solid red;
 }
 .w-40 {
 	width: 40px;

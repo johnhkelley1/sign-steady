@@ -1,5 +1,9 @@
 $(function(){
+	init_page();
 	$(".sheet span").click(function(event){
+		if(highlight == "false"){
+			return
+		}
 		var def = $(event.target).attr('data-def');
 		var term = $(event.target).html();
 
@@ -26,5 +30,63 @@ $(function(){
 			responsiveVoice.cancel();
 		}
 
-	})
-})
+	});
+
+	var options = [false,false,false];
+
+	$('.checkbox').click(function(event){
+		var id = $(event.target).attr('data-id');
+		options[id] = !options[id];
+		if (options[id] == false){
+			$(event.target).removeClass("checked");
+		}
+		else {
+			$(event.target).addClass("checked");
+		}
+
+	});
+
+	$("#review-contract-btn").click(function(event){
+		var url = "/contract.html?highlight="+options[0]+"&speech="+options[1]+"&questions="+options[2];
+		window.location.replace(url);
+	});
+
+	$("#sign-btn").click(function() {
+		if($(".sig-input").val() == "") {
+			$(".sig-input").addClass("invalid");
+			return;
+		}
+		$(".sig-input").removeClass("invalid");
+		$('#myModal').modal('hide');
+		swal("You've successfully signed!", "Thanks for using SignSteady.", "success")
+	});
+
+
+
+});
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+function init_page() {
+	highlight = getParameterByName('highlight');
+	speech = getParameterByName('speech');
+	questions = getParameterByName('questions');
+	if(highlight == "false"){
+		$(".sheet span").addClass("no-highlight");
+		$(".def").hide();
+	}
+	if(speech == "false"){
+		$("#speech-btn").hide();
+		
+	}
+	if(questions == "false"){
+		$(".questions").hide();
+	}
+}
