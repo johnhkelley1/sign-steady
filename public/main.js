@@ -1,4 +1,9 @@
 $(function(){
+
+	highlight = getParameterByName('highlight');
+	speech = getParameterByName('speech');
+	questions = getParameterByName('questions');
+
 	init_page();
 	$(".sheet span").click(function(event){
 		if(highlight == "false"){
@@ -51,6 +56,13 @@ $(function(){
 		window.location.replace(url);
 	});
 
+	$("#questions-next-btn").click(function(){
+
+		$('#modal-1').hide();
+		$("#modal-2").fadeIn('fast');
+
+	})
+
 	$("#sign-btn").click(function() {
 		if($(".sig-input").val() == "") {
 			$(".sig-input").addClass("invalid");
@@ -58,8 +70,31 @@ $(function(){
 		}
 		$(".sig-input").removeClass("invalid");
 		$('#myModal').modal('hide');
-		swal("You've successfully signed!", "Thanks for using SignSteady.", "success")
+		$(".sig-input").val("");
+		swal("You've successfully signed!", "Thanks for using SignSteady.", "success");
 	});
+
+	$("#open-modal-btn").click(function(){
+		$(".modal-content").hide();
+		if(questions == "true"){
+			$("#modal-1").show();
+		}
+		else {
+			$("#modal-2").show();
+		}
+	});
+
+	$('.modal-content input[type=radio]').click(function(event){
+		var conf = $(event.target).val();
+		$(".modal-content").hide();
+		if(conf == "4" || conf == "5") {
+			$("#modal-3").fadeIn('fast');
+		}
+		else {
+			$("#modal-4").fadeIn('fast');
+		}
+		$('.modal-content input[type=radio]').prop('checked', false);
+	})
 
 
 
@@ -75,9 +110,6 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 function init_page() {
-	highlight = getParameterByName('highlight');
-	speech = getParameterByName('speech');
-	questions = getParameterByName('questions');
 	if(highlight == "false"){
 		$(".sheet span").addClass("no-highlight");
 		$(".def").hide();

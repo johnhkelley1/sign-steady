@@ -115,7 +115,7 @@
           715 Lincoln Contract.pdf
         </div>
         <div class="contract-options">
-          <button class="btn btn-primary" id="speech-btn">Text To Speech</button> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Sign Contract</button>
+          <button class="btn btn-primary" id="speech-btn">Text To Speech</button> <button type="button" class="btn btn-primary" id="open-modal-btn" data-toggle="modal" data-target="#myModal">Sign Contract</button>
         </div>
       </div>
       <div class="def-bar">
@@ -133,11 +133,12 @@
       <div class="modal-dialog">
 
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content" id="modal-1">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Sign Contract</h4>
+            <h4 class="modal-title">Review Questions</h4>
           </div>
+
           <div class="modal-body">
 
             <div class="questions">
@@ -146,7 +147,7 @@
                 <div class="accordion-group">
                   <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                      Question 1
+                      When is rent due?
                     </a>
                   </div>
                   <div id="collapseOne" class="accordion-body collapse">
@@ -159,7 +160,7 @@
                 <div class="accordion-group">
                   <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                      Question 2
+                      Who covers utilities?
                     </a>
                   </div>
                   <div id="collapseTwo" class="accordion-body collapse">
@@ -172,7 +173,7 @@
                 <div class="accordion-group">
                   <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                      Question 3
+                      How much is the deposit to cover damages?
                     </a>
                   </div>
                   <div id="collapseThree" class="accordion-body collapse">
@@ -185,6 +186,61 @@
               </div>
             </div>
 
+            <p align="center">
+              <button class="btn btn-primary" id="questions-next-btn">Next</button>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        <!-- End modal content -->
+
+        <!-- Modal content-->
+        <div class="modal-content" id="modal-2">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Contract Understanding</h4>
+          </div>
+
+          <div class="modal-body">
+
+            <div class="title">How confident are you in your understanding of this contract?</div>
+            <p>
+              <label>
+                  <input type="radio" name="editList" value="1"/> Not Confident
+              </label>
+              <label>
+                  <input type="radio" name="editList" value="2"/> Slightly Confident
+              </label>
+              <label>
+                  <input type="radio" name="editList" value="3"/> Somewhat Confident
+              </label>
+              <label>
+                  <input type="radio" name="editList" value="4"/> Confident
+              </label>
+              <label>
+                  <input type="radio" name="editList" value="5"/> Very Confident
+              </label>
+            </p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        <!-- End modal content -->
+
+        <!-- Modal content-->
+        <div class="modal-content" id="modal-3">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Sign Contract</h4>
+          </div>
+
+          <div class="modal-body">
+
+
             <p>
               <input type="text" class="sig-input" placeholder="Your Signature Here" />
             </p>
@@ -193,6 +249,44 @@
             <button type="button" class="btn btn-success" id="sign-btn">Sign Contract</button> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
+        <!-- End modal content -->
+
+         <!-- Modal content-->
+        <div class="modal-content" id="modal-4">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Local Lawyers</h4>
+          </div>
+
+          <div class="modal-body">
+
+            <div class="title">It looks like you could still use some help understanding this contract. Here's a list of local lawyers.</div>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Rick Chavez</td>
+                  <td>(847) 555-9523</td>
+                  <td>rchavez@gmail.com</td>
+                </tr>
+                <tr>
+                  <td>Cathryn Hunt</td>
+                  <td>(847) 555-1877</td>
+                  <td>cathryn@westlakepractice.com</td>
+                </tr>
+                <tr>
+                  <td>John Sears</td>
+                  <td>(847) 555-4090</td>
+                  <td>johnsears97@yahoo.com</td>
+                </tr>
+              </tbody>
+            </table>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        <!-- End modal content -->
 
       </div>
     </div>
